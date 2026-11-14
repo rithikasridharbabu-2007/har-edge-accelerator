@@ -1,0 +1,53 @@
+{
+  "val_subjects": [
+    7,
+    15,
+    22,
+    28
+  ],
+  "hyperparameters": {
+    "epochs": 60,
+    "batch_size": 64,
+    "lr": 0.002,
+    "weight_decay": 0.0001,
+    "optimizer": "Adam",
+    "schedule": "cosine"
+  },
+  "runs": [
+    {
+      "seed": 0,
+      "best_epoch": 4,
+      "val_accuracy": 0.941000759601593,
+      "val_loss": 0.2697822153568268,
+      "test_accuracy": 0.9073634147644043,
+      "n_fit": 6013,
+      "n_val": 1339,
+      "parameters": 3814
+    },
+    {
+      "seed": 1,
+      "best_epoch": 9,
+      "val_accuracy": 0.9551904201507568,
+      "val_loss": 0.3714015781879425,
+      "test_accuracy": 0.8988802433013916,
+      "n_fit": 6013,
+      "n_val": 1339,
+      "parameters": 3814
+    },
+    {
+      "seed": 2,
+      "best_epoch": 5,
+      "val_accuracy": 0.9619118571281433,
+      "val_loss": 0.19961129128932953,
+      "test_accuracy": 0.9032914638519287,
+      "n_fit": 6013,
+      "n_val": 1339,
+      "parameters": 3814
+    }
+  ],
+  "chosen_seed": 2,
+  "test_accuracy_mean": 0.9031783739725748,
+  "test_accuracy_std": 0.0034641633437553568,
+  "test_accuracy_min": 0.8988802433013916,
+  "test_accuracy_max": 0.9073634147644043
+}

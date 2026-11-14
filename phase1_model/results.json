@@ -1,0 +1,250 @@
+{
+  "weights": "weights.npz",
+  "test_windows": 2947,
+  "test_accuracy": 0.9032914828639295,
+  "per_class_accuracy": {
+    "WALKING": 0.9455645161290323,
+    "WALKING_UPSTAIRS": 0.9193205944798302,
+    "WALKING_DOWNSTAIRS": 0.9928571428571429,
+    "SITTING": 0.7678207739307535,
+    "STANDING": 0.8571428571428571,
+    "LAYING": 0.9497206703910615
+  },
+  "confusion_matrix": {
+    "classes": [
+      "WALKING",
+      "WALKING_UPSTAIRS",
+      "WALKING_DOWNSTAIRS",
+      "SITTING",
+      "STANDING",
+      "LAYING"
+    ],
+    "rows_true_cols_predicted": [
+      [
+        469,
+        2,
+        25,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        433,
+        31,
+        0,
+        0,
+        2
+      ],
+      [
+        2,
+        1,
+        417,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        19,
+        1,
+        377,
+        89,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        74,
+        456,
+        0
+      ],
+      [
+        0,
+        27,
+        0,
+        0,
+        0,
+        510
+      ]
+    ]
+  },
+  "parameters": 3814,
+  "macs_per_window": 84544,
+  "layers": [
+    {
+      "layer": "conv1",
+      "type": "Conv1d",
+      "input_shape": [
+        9,
+        128
+      ],
+      "output_shape": [
+        8,
+        124
+      ],
+      "parameters": 368,
+      "macs": 44640,
+      "compares": 0
+    },
+    {
+      "layer": "relu",
+      "type": "ReLU",
+      "input_shape": [
+        8,
+        124
+      ],
+      "output_shape": [
+        8,
+        124
+      ],
+      "parameters": 0,
+      "macs": 0,
+      "compares": 0
+    },
+    {
+      "layer": "pool",
+      "type": "MaxPool1d",
+      "input_shape": [
+        8,
+        124
+      ],
+      "output_shape": [
+        8,
+        62
+      ],
+      "parameters": 0,
+      "macs": 0,
+      "compares": 496
+    },
+    {
+      "layer": "conv2",
+      "type": "Conv1d",
+      "input_shape": [
+        8,
+        62
+      ],
+      "output_shape": [
+        16,
+        58
+      ],
+      "parameters": 656,
+      "macs": 37120,
+      "compares": 0
+    },
+    {
+      "layer": "relu",
+      "type": "ReLU",
+      "input_shape": [
+        16,
+        58
+      ],
+      "output_shape": [
+        16,
+        58
+      ],
+      "parameters": 0,
+      "macs": 0,
+      "compares": 0
+    },
+    {
+      "layer": "pool",
+      "type": "MaxPool1d",
+      "input_shape": [
+        16,
+        58
+      ],
+      "output_shape": [
+        16,
+        29
+      ],
+      "parameters": 0,
+      "macs": 0,
+      "compares": 464
+    },
+    {
+      "layer": "fc",
+      "type": "Linear",
+      "input_shape": [
+        464
+      ],
+      "output_shape": [
+        6
+      ],
+      "parameters": 2790,
+      "macs": 2784,
+      "compares": 0
+    }
+  ],
+  "latency_batch1": {
+    "cpu": "Apple M4",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "torch": "2.15.0",
+    "measurements": [
+      {
+        "threads": 1,
+        "runs": 5000,
+        "warmup": 500,
+        "median_us": 33.875,
+        "mean_us": 33.9665708,
+        "p99_us": 40.12666000000004,
+        "min_us": 27.292
+      }
+    ]
+  },
+  "training": {
+    "val_subjects": [
+      7,
+      15,
+      22,
+      28
+    ],
+    "hyperparameters": {
+      "epochs": 60,
+      "batch_size": 64,
+      "lr": 0.002,
+      "weight_decay": 0.0001,
+      "optimizer": "Adam",
+      "schedule": "cosine"
+    },
+    "runs": [
+      {
+        "seed": 0,
+        "best_epoch": 4,
+        "val_accuracy": 0.941000759601593,
+        "val_loss": 0.2697822153568268,
+        "test_accuracy": 0.9073634147644043,
+        "n_fit": 6013,
+        "n_val": 1339,
+        "parameters": 3814
+      },
+      {
+        "seed": 1,
+        "best_epoch": 9,
+        "val_accuracy": 0.9551904201507568,
+        "val_loss": 0.3714015781879425,
+        "test_accuracy": 0.8988802433013916,
+        "n_fit": 6013,
+        "n_val": 1339,
+        "parameters": 3814
+      },
+      {
+        "seed": 2,
+        "best_epoch": 5,
+        "val_accuracy": 0.9619118571281433,
+        "val_loss": 0.19961129128932953,
+        "test_accuracy": 0.9032914638519287,
+        "n_fit": 6013,
+        "n_val": 1339,
+        "parameters": 3814
+      }
+    ],
+    "chosen_seed": 2,
+    "test_accuracy_mean": 0.9031783739725748,
+    "test_accuracy_std": 0.0034641633437553568,
+    "test_accuracy_min": 0.8988802433013916,
+    "test_accuracy_max": 0.9073634147644043
+  },
+  "confusion_matrix_png": "confusion_matrix.png"
+}
