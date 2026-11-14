@@ -13,13 +13,13 @@ Time estimates assume about 6 to 8 hours a week alongside classes. They are gues
 
 ## Phase 1: Model (about 2 weeks)
 
-- [ ] Script to download and unpack the UCI HAR dataset (raw inertial signals, 128 × 9 per window).
-- [ ] Use the dataset's own train/test split, which separates volunteers, so results are comparable with published ones.
-- [ ] Train a small 1D CNN in PyTorch. Starting point: two convolution layers, ReLU, max-pool, one dense layer, six outputs. Target under 10,000 parameters.
-- [ ] Report test accuracy and a confusion matrix.
-- [ ] Count parameters and multiply-accumulate operations per window; these feed the hardware predictions.
-- [ ] Export weights to a plain file format (`.npz`).
-- [ ] Fix random seeds and pin package versions.
+- [x] Script to download and unpack the UCI HAR dataset (raw inertial signals, 128 × 9 per window).
+- [x] Use the dataset's own train/test split, which separates volunteers, so results are comparable with published ones.
+- [x] Train a small 1D CNN in PyTorch. Starting point: two convolution layers, ReLU, max-pool, one dense layer, six outputs. Target under 10,000 parameters.
+- [x] Report test accuracy and a confusion matrix.
+- [x] Count parameters and multiply-accumulate operations per window; these feed the hardware predictions.
+- [x] Export weights to a plain file format (`.npz`).
+- [x] Fix random seeds and pin package versions.
 
 **Done when:** one command trains the model and prints accuracy, parameter count and operation count. Target accuracy: around 90% (a target, not a promise).
 

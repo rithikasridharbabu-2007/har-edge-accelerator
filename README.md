@@ -2,7 +2,7 @@
 
 **A human-activity-recognition model taken all the way from training to a hand-written FPGA design, with every hardware cost predicted before it is measured.**
 
-> **Status: planning.** No code yet. This README describes what the project will be; the results table below is empty until each phase lands. See [docs/plan.md](docs/plan.md) for the task list.
+> **Status: Phase 1 complete.** The PyTorch model is trained and measured (see [phase1_model/](phase1_model/README.md)); Phases 2 to 4 are not started. The results table below is filled in as each phase lands. See [docs/plan.md](docs/plan.md) for the task list.
 
 ## The question
 
@@ -31,7 +31,7 @@ Filled in as phases complete. Empty cells mean "not measured yet", not zero.
 
 | Implementation | Accuracy | Latency per window | Energy per window | LUTs | DSPs | BRAM |
 |---|---|---|---|---|---|---|
-| PyTorch float32 (CPU) | | | | n/a | n/a | n/a |
+| PyTorch float32 (CPU) | 90.33% | 0.034 ms (batch 1, 1 thread, Apple M4) | | n/a | n/a | n/a |
 | CUDA float32 (GPU) | | | | n/a | n/a | n/a |
 | int8 reference (CPU) | | | | n/a | n/a | n/a |
 | Hand-written RTL, **predicted** | | | | | | |
