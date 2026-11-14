@@ -1,0 +1,16 @@
+# dataset (downloaded by phase1_model/download_data.py)
+data/
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# per-seed training checkpoints (the chosen model is phase1_model/weights.npz)
+phase1_model/runs/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
